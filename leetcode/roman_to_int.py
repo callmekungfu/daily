@@ -1,5 +1,22 @@
 from enum import Enum
 
+def value(s):
+    if s == 'I':
+        return 1
+    if s == 'V':
+        return 5
+    if s == 'X':
+        return 10
+    if s == 'L':
+        return 50
+    if s == 'C':
+        return 100
+    if s == 'D':
+        return 500
+    if s == 'M':
+        return 1000
+    return -1
+
 class Roman(Enum):
     I = 1
     IV = 4
@@ -20,15 +37,15 @@ def romanToInt(s):
     sum = 0
     i = 0
     while i < len(s):
-        s1 = Roman[s[i]].value
+        s1 = value(s[i])
         if (i+1 < len(s)):
-            s2 = Roman[s[i + 1]].value
+            s2 = value(s[i+1])
             if (s1 >= s2):
                 sum = sum + s1
                 i = i + 1
             else:
                 sum = sum + s2 - s1
-                i + i + 2
+                i = i + 2
         else:
             sum = sum + s1
             i = i + 1
