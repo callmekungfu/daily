@@ -6,10 +6,14 @@
 """
 
 # Real life implementation
+# Runtime: 36 ms
+# Memory Usage: 13.4 MB
 def strStr_lame(haystack: str, needle: str) -> int:
     return haystack.find(needle)
 
-# Real life implementation
+# Naive implementation
+# Runtime: 52 ms, 28.05 percentile
+# Memory Usage: 13.3 MB, 5.13 percentile
 def strStr(haystack: str, needle: str) -> int:
     struct_len = len(needle)
     for i in range(0, len(haystack)):
