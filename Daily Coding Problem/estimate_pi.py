@@ -9,16 +9,18 @@
 """
 
 import random
+import time
 from typing import Tuple
 
-# Imaging having 
+
 
 def estimatePI(radius: float) -> float:
     estimation = 4
     points_in = 1
     points_total = 1
+    t_end = time.time() + 10
 
-    while round(estimation, 3) != 3.141:
+    while time.time() <= t_end:
         point = randomPoint((-1 * radius, radius), (-1 * radius, radius), 3)
         x = point[0]
         y = point[1]
@@ -31,7 +33,8 @@ def estimatePI(radius: float) -> float:
         points_total += 1
         estimation = 4 * (points_in/points_total)
         print(round(estimation, 3), "Number of Points:", points_total)
-    pass
+    print("\n---\nEstimation completed")
+    print("Result:", estimation)
 
 def randomPoint(x_bound: Tuple[float], y_bound: Tuple[float], accuracy: int) -> Tuple[float]:
     x_cor = round(random.uniform(x_bound[0], x_bound[1]), accuracy)
