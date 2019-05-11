@@ -1,7 +1,6 @@
 """
-    Name: Implement strStr()
+    Name: Estimate Pi
     Source: Daily Coding Problem 
-    Link: https://leetcode.com/problems/implement-strstr/
     Description:
         This problem was asked by Google.
         The area of a circle is defined as πr^2. Estimate π to 3 decimal places using a Monte Carlo method.
