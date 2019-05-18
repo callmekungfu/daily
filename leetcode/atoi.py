@@ -1,3 +1,10 @@
+"""
+    Name: Implement atoi()
+    Source: LeetCode - 8
+    Link: https://leetcode.com/problems/string-to-integer-atoi
+    Description: Implement atoi which converts a string to an integer.
+"""
+
 def myAtoi(word: str) -> int:
     stripped = word.strip().strip('+')
     numerated = ""
