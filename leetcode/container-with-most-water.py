@@ -1,13 +1,18 @@
 from typing import List
 
 """
-    Naive Solution.
-
-    Time: O(n^2)
-    Space: O(1)
+    Name: Container With Most Water
+    Source: LeetCode - 11
+    Link: https://leetcode.com/problems/container-with-most-water
 """
 
 class Solution:
+    """
+        Naive Solution.
+
+        Time: O(n^2)
+        Space: O(1)
+    """
     def maxArea(self, height: List[int]) -> int:
         max_area: int = 0
         for i in range(0, len(height)):
@@ -15,6 +20,12 @@ class Solution:
                 max_area = max(max_area, min(height[i], height[j]) * (j - i))
         return max_area
     
+    """
+        Optimal Solution.
+
+        Time: O(n)
+        Space: O(1)
+    """
     def maxAreaBetter(self, height: List[int]) -> int:
         max_area = 0
         left = 0
