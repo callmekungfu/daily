@@ -12,7 +12,6 @@ def reverse_str_in_place(str_list):
   return str_list
 
 def reverse(list_of_chars):
-
   left_index  = 0
   right_index = len(list_of_chars) - 1
 
