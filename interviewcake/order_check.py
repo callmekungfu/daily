@@ -26,6 +26,8 @@ def check_order_validity(take_out_orders, dine_in_orders, served_orders):
     if order == take_out_next and take_out_i < len(take_out_orders):
       take_out_i += 1
       take_out_next = take_out_orders[take_out_i] if take_out_i < len(take_out_orders) else take_out_next
+  if take_out_i != len(take_out_orders) - 1 or dine_in_i != len(dine_in_orders) - 1:
+    return False
   return True
 
 # take_out = [17, 8, 24]
