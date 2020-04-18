@@ -16,3 +16,15 @@ When building your function:
 - Don't make your users watch the same movie twice
 - Optimize for runtime over memory
 '''
+
+def has_two_movies_with_good_runtime(flight_length, movie_lengths):
+  movie_map = {}
+  for length in movie_lengths:
+    movie_map[length] = movie_map[length] + 1 if length in movie_map else 1
+  for movie in movie_lengths:
+    minutes_needed = flight_length - movie
+    if (minutes_needed <= 0) or ((minutes_needed in movie_map) and (minutes_needed != movie or movie_map[movie] > 1)):
+      return True
+  return False
+
+print(has_two_movies_with_good_runtime(40, [20, 20, 40]))
