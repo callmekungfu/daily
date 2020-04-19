@@ -17,10 +17,16 @@ When building your function:
 - Optimize for runtime over memory
 '''
 
+# My solution
+# Build a dictionary by iterating through the array
+# Then check every element in the list until one satisfies the requirements
+# We can do this in O(n) time, where n is the length of movie_lengths.
 def has_two_movies_with_good_runtime(flight_length, movie_lengths):
   movie_map = {}
+  # Build Map
   for length in movie_lengths:
     movie_map[length] = movie_map[length] + 1 if length in movie_map else 1
+  # Check for valid cases
   for movie in movie_lengths:
     minutes_needed = flight_length - movie
     if (minutes_needed <= 0) or ((minutes_needed in movie_map) and (minutes_needed != movie or movie_map[movie] > 1)):
