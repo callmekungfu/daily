@@ -1,5 +1,8 @@
+# My solution
+# O(n)
 def is_palindrome(word):
   char_map = {}
+  # Build Map
   for char in word:
     char_map[char] = char_map[char] + 1 if char in char_map else 1
   if (len(word) % 2 == 1):
@@ -12,6 +15,7 @@ def is_palindrome(word):
       if occurance % 2 == 1:
         found_odd = True
   else:
+    # Even number of characters
     for key in char_map:
       occurance = char_map[key]
       if occurance % 2 == 1:
