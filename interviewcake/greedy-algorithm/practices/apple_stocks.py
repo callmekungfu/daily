@@ -20,3 +20,18 @@ For example:
 
 No "shorting"—you need to buy before you can sell. Also, you can't buy and sell in the same time step—at least 1 minute has to pass.
 '''
+
+# My Solution
+def get_max_profit(stock_prices):
+  max_profit = 0
+  lowest_price = stock_prices[0]
+  for price in stock_prices:
+    if price < lowest_price:
+      lowest_price = price
+    elif price - lowest_price > max_profit:
+      max_profit = price - lowest_price
+  return max_profit
+
+# Test code
+stock_prices = [10, 7, 5, 8, 11, 9]
+print(get_max_profit(stock_prices))
