@@ -18,3 +18,21 @@ by calculating:
 Python 3.6
 Here's the catch: You can't use division in your solution!
 '''
+
+def get_products_of_all_ints_except_at_index(ints):
+  if len(ints) < 2:
+    raise IndexError('Getting the product of numbers at other indices requires at least 2 numbers')
+
+  product_list = [None] * len(ints)
+  product_so_far = 1
+  for i in range(len(ints)):
+    product_list[i] = product_so_far
+    product_so_far *= ints[i]
+
+  product_so_far = 1
+  for i in range(len(ints) - 1, -1, -1):
+    product_list[i] *= product_so_far
+    product_so_far *= ints[i]
+  return product_list
+
+print(get_products_of_all_ints_except_at_index([1, 7, 3, 4]))
